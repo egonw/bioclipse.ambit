@@ -1,6 +1,6 @@
 A Bioclipse plugin for AMBIT.
 
-AMBIT is licensed LGPL (doi:10.1186/1758-2946-3-18).
+AMBIT is licensed LGPL (http://dx.doi.org/10.1186/1758-2946-3-18).
 
 Example script code:
 
