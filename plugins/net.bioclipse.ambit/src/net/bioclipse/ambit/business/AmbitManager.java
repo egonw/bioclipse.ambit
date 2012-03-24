@@ -10,6 +10,7 @@
  ******************************************************************************/
 package net.bioclipse.ambit.business;
 
+import net.bioclipse.core.domain.IMolecule;
 import net.bioclipse.managers.business.IBioclipseManager;
 
 import org.apache.log4j.Logger;
@@ -25,4 +26,10 @@ public class AmbitManager implements IBioclipseManager {
     public String getManagerName() {
         return "ambit";
     }
+
+    public double calculatePKa(IMolecule molecule) {
+    	logger.debug("Take a reasonable default");
+    	return 7.0;
+    }
+
 }

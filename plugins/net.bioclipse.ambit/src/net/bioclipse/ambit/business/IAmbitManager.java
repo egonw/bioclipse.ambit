@@ -11,6 +11,9 @@
 package net.bioclipse.ambit.business;
 
 import net.bioclipse.core.PublishedClass;
+import net.bioclipse.core.PublishedMethod;
+import net.bioclipse.core.Recorded;
+import net.bioclipse.core.domain.IMolecule;
 import net.bioclipse.managers.business.IBioclipseManager;
 
 @PublishedClass(
@@ -18,5 +21,12 @@ import net.bioclipse.managers.business.IBioclipseManager;
     doi="10.1186/1758-2946-3-18"
 )
 public interface IAmbitManager extends IBioclipseManager {
+
+    @Recorded
+    @PublishedMethod(
+        methodSummary = "Calculates the pKa value for the molecule.",
+        params="IMolecule molecule"
+    )
+    public double calculatePKa(IMolecule molecule);
 
 }
