@@ -30,7 +30,11 @@ import org.openscience.cdk.isomorphism.UniversalIsomorphismTester;
 import org.openscience.cdk.isomorphism.matchers.IQueryAtom;
 import org.openscience.cdk.isomorphism.matchers.QueryAtomContainer;
 import org.openscience.cdk.isomorphism.mcss.RMap;
+import org.openscience.cdk.qsar.DescriptorValue;
+import org.openscience.cdk.qsar.result.DoubleResult;
 
+import ambit2.descriptors.PKASmartsDescriptor;
+import ambit2.descriptors.VerboseDescriptorResult;
 import ambit2.smarts.SmartsParser;
 
 public class AmbitManager implements IBioclipseManager {
@@ -49,10 +53,12 @@ public class AmbitManager implements IBioclipseManager {
     }
 
     public double calculatePKa(IMolecule molecule) throws BioclipseException {
-    	logger.debug("Take a reasonable default");
+    	logger.debug("Calculate the pKa");
     	ICDKMolecule cdkMol = cdk.asCDKMolecule(molecule);
+    	PKASmartsDescriptor descriptor = new PKASmartsDescriptor();
+    	DescriptorValue pka = descriptor.calculate(cdkMol.getAtomContainer());
     	
-    	return 7.0;
+    	return ((DoubleResult)((VerboseDescriptorResult)pka.getValue()).getResult()).doubleValue();
     }
 
     public boolean smartsMatches(IMolecule molecule, String smarts )

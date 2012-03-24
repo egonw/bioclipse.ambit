@@ -8,5 +8,6 @@
 	<classpathentry kind="lib" path="libs/ambit2-smarts-2.4.4-SNAPSHOT.jar"/>
 	<classpathentry kind="lib" path="libs/ambit2-base-2.4.4-SNAPSHOT.jar"/>
 	<classpathentry kind="lib" path="libs/ambit2-core-2.4.4-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="libs/binding-2.0.6.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

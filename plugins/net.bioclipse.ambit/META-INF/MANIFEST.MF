@@ -20,13 +20,16 @@ Require-Bundle: org.eclipse.ui,
  org.openscience.cdk.data,
  org.openscience.cdk.core,
  org.openscience.cdk.standard,
- org.openscience.cdk.smarts
+ org.openscience.cdk.smarts,
+ org.openscience.cdk.qsar
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: org.apache.log4j,
  org.openscience.cdk.isomorphism
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .,
- libs/ambit2-core-2.4.4-SNAPSHOT-jar-with-dependencies.jar,
+ libs/ambit2-base-2.4.4-SNAPSHOT.jar,
+ libs/ambit2-core-2.4.4-SNAPSHOT.jar,
  libs/ambit2-descriptors-2.4.4-SNAPSHOT.jar,
  libs/ambit2-hashcode-2.4.4-SNAPSHOT.jar,
- libs/ambit2-smarts-2.4.4-SNAPSHOT.jar
+ libs/ambit2-smarts-2.4.4-SNAPSHOT.jar,
+ libs/binding-2.0.6.jar
