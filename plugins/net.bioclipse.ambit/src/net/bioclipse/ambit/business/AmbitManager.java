@@ -32,7 +32,9 @@ import org.openscience.cdk.isomorphism.matchers.QueryAtomContainer;
 import org.openscience.cdk.isomorphism.mcss.RMap;
 import org.openscience.cdk.qsar.DescriptorValue;
 import org.openscience.cdk.qsar.result.DoubleResult;
+import org.openscience.cdk.qsar.result.IntegerArrayResult;
 
+import ambit2.descriptors.FunctionalGroupDescriptor;
 import ambit2.descriptors.PKASmartsDescriptor;
 import ambit2.descriptors.VerboseDescriptorResult;
 import ambit2.smarts.SmartsParser;
@@ -41,6 +43,8 @@ public class AmbitManager implements IBioclipseManager {
 
     private static final Logger logger = Logger.getLogger(AmbitManager.class);
     private static final SmartsParser smartsParser = new SmartsParser();
+    private final PKASmartsDescriptor pkaDescriptor = new PKASmartsDescriptor();
+    private final FunctionalGroupDescriptor oecdDescriptor = new FunctionalGroupDescriptor();
 
     private CDKManager cdk = new CDKManager();
 
@@ -55,12 +59,23 @@ public class AmbitManager implements IBioclipseManager {
     public double calculatePKa(IMolecule molecule) throws BioclipseException {
     	logger.debug("Calculate the pKa");
     	ICDKMolecule cdkMol = cdk.asCDKMolecule(molecule);
-    	PKASmartsDescriptor descriptor = new PKASmartsDescriptor();
-    	DescriptorValue pka = descriptor.calculate(cdkMol.getAtomContainer());
+    	DescriptorValue pka = pkaDescriptor.calculate(cdkMol.getAtomContainer());
     	
     	return ((DoubleResult)((VerboseDescriptorResult)pka.getValue()).getResult()).doubleValue();
     }
 
+    public List<Integer> countOECDGroups(IMolecule molecule)
+            throws BioclipseException {
+    	logger.debug("Calculate the OECD functional group counts");
+    	ICDKMolecule cdkMol = cdk.asCDKMolecule(molecule);
+    	DescriptorValue pka = oecdDescriptor.calculate(cdkMol.getAtomContainer());
+    	
+    	IntegerArrayResult result = (IntegerArrayResult)((VerboseDescriptorResult)pka.getValue()).getResult();
+    	List<Integer> counts = new ArrayList<Integer>();
+    	for (int i=0;i<result.length();i++) counts.add(result.get(i));
+    	return counts;
+    }
+    
     public boolean smartsMatches(IMolecule molecule, String smarts )
     	throws BioclipseException {
     	ICDKMolecule cdkMol = cdk.asCDKMolecule(molecule);

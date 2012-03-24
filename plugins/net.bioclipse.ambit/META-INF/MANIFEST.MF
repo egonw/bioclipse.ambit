@@ -21,7 +21,9 @@ Require-Bundle: org.eclipse.ui,
  org.openscience.cdk.core,
  org.openscience.cdk.standard,
  org.openscience.cdk.smarts,
- org.openscience.cdk.qsar
+ org.openscience.cdk.qsar,
+ org.openscience.cdk.valencycheck,
+ org.openscience.cdk.smiles
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: org.apache.log4j,
  org.openscience.cdk.isomorphism
