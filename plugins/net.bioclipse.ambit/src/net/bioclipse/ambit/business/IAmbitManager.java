@@ -13,6 +13,7 @@ package net.bioclipse.ambit.business;
 import net.bioclipse.core.PublishedClass;
 import net.bioclipse.core.PublishedMethod;
 import net.bioclipse.core.Recorded;
+import net.bioclipse.core.business.BioclipseException;
 import net.bioclipse.core.domain.IMolecule;
 import net.bioclipse.managers.business.IBioclipseManager;
 
@@ -27,6 +28,14 @@ public interface IAmbitManager extends IBioclipseManager {
         methodSummary = "Calculates the pKa value for the molecule.",
         params="IMolecule molecule"
     )
-    public double calculatePKa(IMolecule molecule);
+    public double calculatePKa(IMolecule molecule)
+        throws BioclipseException;
 
+    @PublishedMethod ( 
+        params = "IMolecule molecule, String smarts",
+        methodSummary = "Returns true if the given SMARTS matches the given " +
+    		"molecule" )
+    @Recorded
+    public boolean smartsMatches(IMolecule molecule, String smarts )
+    	throws BioclipseException;
 }

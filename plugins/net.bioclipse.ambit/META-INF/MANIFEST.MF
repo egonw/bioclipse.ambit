@@ -12,9 +12,18 @@ Require-Bundle: org.eclipse.ui,
  net.bioclipse.scripting,
  org.springframework.bundle.spring.aop,
  net.sf.cglib,
- org.springframework.osgi.aopalliance.osgi
+ org.springframework.osgi.aopalliance.osgi,
+ net.bioclipse.cdk.business,
+ org.openscience.cdk.silent,
+ org.openscience.cdk.interfaces,
+ org.openscience.cdk.isomorphism,
+ org.openscience.cdk.data,
+ org.openscience.cdk.core,
+ org.openscience.cdk.standard,
+ org.openscience.cdk.smarts
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Import-Package: org.apache.log4j
+Import-Package: org.apache.log4j,
+ org.openscience.cdk.isomorphism
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .,
  libs/ambit2-core-2.4.4-SNAPSHOT-jar-with-dependencies.jar,
