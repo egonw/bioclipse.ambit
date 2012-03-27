@@ -64,6 +64,13 @@ public class AmbitManager implements IBioclipseManager {
     	return ((DoubleResult)((VerboseDescriptorResult)pka.getValue()).getResult()).doubleValue();
     }
 
+    public List<String> listOECDGroups() throws BioclipseException {
+    	List<String> groups = new ArrayList<String>();
+    	String[] names = oecdDescriptor.getDescriptorNames();
+    	for (int i=0;i<names.length;i++) groups.add(names[i]);
+    	return groups;
+    }
+
     public List<Integer> countOECDGroups(IMolecule molecule)
             throws BioclipseException {
     	logger.debug("Calculate the OECD functional group counts");

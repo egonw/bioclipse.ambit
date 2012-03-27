@@ -48,4 +48,10 @@ public interface IAmbitManager extends IBioclipseManager {
     )
     public List<Integer> countOECDGroups(IMolecule molecule)
         throws BioclipseException;
+
+    @Recorded
+    @PublishedMethod(
+        methodSummary = "Lists the OECD functional group counts."
+    )
+    public List<String> listOECDGroups() throws BioclipseException;
 }
