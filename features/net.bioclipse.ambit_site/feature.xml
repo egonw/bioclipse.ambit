@@ -21,6 +21,10 @@
          id="net.bioclipse.ambit_feature"
          version="0.0.0"/>
 
+   <includes
+         id="net.bioclipse.ambit.server_feature"
+         version="0.0.0"/>
+
    <requires>
       <import feature="net.bioclipse.core_feature" version="2.5.0"/>
    </requires>

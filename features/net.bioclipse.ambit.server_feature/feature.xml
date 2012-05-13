@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="net.bioclipse.ambit.server_feature"
+      label="AMBIT Server Feature"
+      version="2.5.0.qualifier"
+      provider-name="Bioclipse Team"
+      plugin="net.bioclipse.ambit.server">
+
+   <description>
+      AMBIT Server extension for Bioclipse.
+   </description>
+
+   <copyright>
+      Copyright (c) 2012 The Bioclipse Project Team and others.
+Eclipse Public License.
+
+This feature includes the AMBIT library, which is © Copyright by IdeaConsult Ltd.
+   </copyright>
+
+   <plugin
+         id="net.bioclipse.ambit.server"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
