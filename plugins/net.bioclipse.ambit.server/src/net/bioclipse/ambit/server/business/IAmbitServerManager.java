@@ -30,6 +30,6 @@ public interface IAmbitServerManager extends IBioclipseManager {
 	@PublishedMethod(
 		methodSummary = "Shuts down the local AMBIT2 server"
 	)
-	public void shutdown();
+	public void shutdown() throws BioclipseException;
 
 }
