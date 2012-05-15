@@ -46,7 +46,7 @@ public class AmbitServerManager implements IBioclipseManager {
     }
 
     public void shutdown() throws BioclipseException {
-    	if (component != null)
+    	if (component == null)
     		throw new BioclipseException("There is no local AMBIT2 server running.");
 
     	try {
