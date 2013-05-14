@@ -13,10 +13,6 @@
 2011. The AMBIT library code is copyrighted by Ideaconsult Ltd.
    </copyright>
 
-   <url>
-      <discovery label="AMBIT website" url="http://ambit.sourceforge.net/"/>
-   </url>
-
    <includes
          id="net.bioclipse.ambit_feature"
          version="0.0.0"/>
